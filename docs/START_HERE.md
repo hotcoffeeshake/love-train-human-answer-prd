@@ -4,7 +4,7 @@
 
 ## 当前实施状态（2026-07-11）
 
-实施已经交接到：
+后端与替代网页实现已经交接到：
 
 - 本地路径：`/Volumes/CopilotDisk/A_Work/Joshua/love-train-mp`
 - GitHub：`https://github.com/hotcoffeeshake/love-train-mp`
@@ -13,7 +13,9 @@
 - 完成度审计：`love-train-mp/docs/lovetrain-human-answer-v1/completion-audit.md`
 - 测试记录：`love-train-mp/docs/v1-human-answer-test-record.md`
 
-核心代码与本地自动化/HTTP 验证已完成；尚未通过的门槛是部署预览环境中的真实浏览器人工链路、真实预览 smoke，以及 app 上游仓库写入交付。
+重要边界：`love-train-mp` 不是当前 Vercel 生产网站的源码仓库。公开审计确认生产 `/human-answer.js` 仍与本仓库 mock 脚本完全一致，且 `/api/questions`、`/api/human/tasks`、`/api/chat` 均为 404。详见 `docs/PRODUCTION_SOURCE_AUDIT.md`。
+
+因此当前状态是：后端核心代码与本地自动化/HTTP 验证完成；真实生产网站源码/访问、前端接入、部署预览浏览器验收和 app 上游交付仍未完成。
 
 ## 1. 先读这些文件
 
@@ -31,6 +33,8 @@
    - 本地 GitHub Issue 草稿索引。
 5. `docs/tasks/issue-01-baseline.md` 到 `docs/tasks/issue-10-release-readiness.md`
    - 实际开发时逐个执行的任务卡。
+6. `docs/PRODUCTION_SOURCE_AUDIT.md`
+   - 生产网站与当前仓库的关系、公开探测证据、完成 V1 所需的源码和权限。
 
 ## 2. 当前仓库不能直接完成的部分
 

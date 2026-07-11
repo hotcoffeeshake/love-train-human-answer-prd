@@ -17,4 +17,4 @@
 
 关键验收链路：网页提问 -> 后端 Question -> 真人任务池 -> 真人 Answer -> 提问者结果页 -> RewardLedger。
 
-实施状态（2026-07-11）：任务卡已复制并在 `/Volumes/CopilotDisk/A_Work/Joshua/love-train-mp` 的 `feat/lovetrain-human-answer-v1` 分支执行。核心实现、本地自动化测试和独立 HTTP smoke 已通过；issue 09 的真实浏览器变体与 issue 10 的部署预览验收仍待完成。详见目标仓库的 `docs/lovetrain-human-answer-v1/completion-audit.md`。
+实施状态（2026-07-11）：任务卡已复制并在 `/Volumes/CopilotDisk/A_Work/Joshua/love-train-mp` 的 `feat/lovetrain-human-answer-v1` 分支执行。后端核心实现、本地自动化测试和独立 HTTP smoke 已通过，但该仓库不是当前 Vercel 生产网站源码。生产站仍运行本仓库的 mock 脚本且缺少 `/api/*`；issue 09 的真实生产网站/浏览器变体与 issue 10 的部署预览验收仍待完成。详见 `docs/PRODUCTION_SOURCE_AUDIT.md` 和目标仓库的 `docs/lovetrain-human-answer-v1/completion-audit.md`。
