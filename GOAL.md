@@ -49,25 +49,27 @@ Deliverables:
 
 ### Phase 1: Target app repository handoff
 
-Status: blocked until real LoveTrain app repository is available
+Status: completed on 2026-07-07
 
-Required input:
+Resolved target:
 
-- Real LoveTrain application repository path or Git URL.
-- Confirmation of stack: Next.js/React or other.
-- Database provider and schema location.
-- Existing auth/session helper location.
-- Existing `/api/chat` or AI generation implementation location.
+- Local path: `/Volumes/CopilotDisk/A_Work/Joshua/love-train-mp`.
+- GitHub: `https://github.com/hotcoffeeshake/love-train-mp`.
+- Branch: `feat/lovetrain-human-answer-v1`.
+- Stack: Fastify backend, CloudBase/MongoDB adapter, existing AI provider abstraction, WeChat identity, and native Mini Program.
+- Website adaptation: minimal ask/result/human-desk pages are served directly by Fastify under `/`, `/questions/:id`, and `/human-answer`.
 
-Expected action after repository is available:
+Completed handoff:
 
-- Create branch `feat/lovetrain-human-answer-v1`.
-- Copy/keep `GOAL.md`, implementation plan, and task cards in the target repository.
-- Execute issues 01-10 in order.
+- [x] Create branch `feat/lovetrain-human-answer-v1`.
+- [x] Copy `GOAL.md`, implementation plan, task cards, scripts, and implementation entry into the target repository.
+- [x] Add a target-stack assessment and test record.
+- [x] Execute the implementation portions of issues 01-09.
+- [ ] Complete issue 10 browser/deployed-preview verification and upstream delivery.
 
 ### Phase 2: V1 implementation
 
-Status: pending target app repository
+Status: core code and local verification complete; deployed browser release gate pending
 
 Implementation order:
 
@@ -81,6 +83,15 @@ Implementation order:
 8. Privacy, reporting, and status transitions.
 9. E2E tests.
 10. Release readiness verification.
+
+Current evidence in the target app repository (2026-07-11):
+
+- Backend: 17 test files / 75 tests pass.
+- Mini Program regression: 2 files / 8 tests pass.
+- Lint, typecheck, E2E, build, environment check, MongoDB transaction/concurrency tests, and standalone HTTP smoke pass.
+- Completion audit: `love-train-mp/docs/lovetrain-human-answer-v1/completion-audit.md`.
+- Test record: `love-train-mp/docs/v1-human-answer-test-record.md`.
+- Remaining: real browser/manual smoke on a deployed preview and branch delivery to an app repository with write access.
 
 ## Non-Negotiable Acceptance Chain
 
@@ -106,12 +117,9 @@ V1 is accepted only when this real persisted chain works:
 
 ## Immediate Next Step
 
-If continuing inside this PRD/prototype repo:
+Continue in `/Volumes/CopilotDisk/A_Work/Joshua/love-train-mp`:
 
-- Commit the planning package.
-- Optionally create actual GitHub Issues from `docs/tasks/*.md` if GitHub write access is available.
-
-If continuing with real development:
-
-- Provide the real LoveTrain app repository path or Git URL.
-- Then execute `docs/tasks/issue-01-baseline.md` first.
+1. Obtain a deployed preview URL and browser-capable session.
+2. Run the browser/manual chain and `BASE_URL=https://<preview-host> npm run smoke:human-answer`.
+3. Update the target app test record with deployed evidence.
+4. Push the app feature branch through an account with write access, or use an approved fork/PR workflow. The currently active account has read-only access to the upstream app repository.

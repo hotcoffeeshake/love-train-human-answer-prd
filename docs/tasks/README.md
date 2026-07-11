@@ -16,3 +16,5 @@
 10. `issue-10-release-readiness.md`
 
 关键验收链路：网页提问 -> 后端 Question -> 真人任务池 -> 真人 Answer -> 提问者结果页 -> RewardLedger。
+
+实施状态（2026-07-11）：任务卡已复制并在 `/Volumes/CopilotDisk/A_Work/Joshua/love-train-mp` 的 `feat/lovetrain-human-answer-v1` 分支执行。核心实现、本地自动化测试和独立 HTTP smoke 已通过；issue 09 的真实浏览器变体与 issue 10 的部署预览验收仍待完成。详见目标仓库的 `docs/lovetrain-human-answer-v1/completion-audit.md`。
